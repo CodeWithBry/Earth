@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project E.A.R.T.H.</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="module" src="/script.js"></script>
+</head>
+
+<body>
+    <!-- Header (Navigation) Section -->
+    <div class="mainHeaderParent">
+        <center>
+            <div class="mainHeader">
+                <h2 id="title">
+                    <i class="fa-solid fa-earth-asia earthIcon"></i>
+                    E.A.R.T.H.
+                </h2>
+
+                <ul id="navList">
+                    <li class="navItem"><a href="/" target="_self">Home</a></li>
+                    <li class="navItem"><a href="/learn" target="_self">Learn</a></li>
+                    <li class="navItem"><a href="/take-action" target="_self">Take Action</a></li>
+                    <li class="navItem"><a href="/ai-assistant" target="_self">AI Assistant</a></li>
+                    <li class="navItem"><a href="/about" target="_self">About & Developer</a></li>
+                    <li class="navItem" id="signup"><a href="/signup" target="_self">Sign Up</a></li>
+                    <li class="navItem" id="login"><a href="/login" target="_self">Log In</a></li>
+                    <li class="navItem" id="logout"><a href="/login" target="_self">Log out</a></li>
+                </ul>
+
+                <!-- <button class="auth-button"></button>
+                <button class="auth-button"></button> -->
+            </div>
+        </center>
+    </div>
+
+    <div class="home">
+        <div class="heroSectionParent">
+            <div class="heroSection">
+                <div class="leftSection">
+
+                    <h1>Environmental</h1>
+                    <h1>Awareness &</h1>
+                    <h1><span id="highlight">Responsibility</span> Together</h1>
+                    <h1>Hub</h1>
+                    <br>
+                    <p>Join the movement towards a sustainable future. Learn, act, </p>
+                    <p>and make difference for our planet with cutting-edge AI </p>
+                    <p>assistance and comprehensive environmental education </p>
+                    <br>
+
+                    <div class="introButton">
+                        <a href="/news" target="_self" class="startLearning"><b>Start Learning</b></a>
+                        <a href="/action" target="_self" class="takeAction"><b>Take Action Now</b></a>
+                    </div>
+
+                </div>
+
+                <div class="rightSection">
+
+                    <img src="../src/Planet_Earth.jpeg" alt="Earth Image" id="earthImage">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sectionBreak">
+            <p>"We won’t have a society if we destroy the environment." – Margaret Mead</p>
+        </div>
+
+        <div class="exploreContentParent">
+            <div class="exploreContent">
+
+                <center>
+                    <h1>Explore our platforms</h1>
+                    <br>
+                    <p> Comprehensive tools and resources for environmental awareness</p>
+                </center>
+
+                <br>
+
+                <div class="cardContainer">
+
+                    <div class="card">
+
+                        <div class="container">
+
+                            <img src="../src/book.png" alt="Book image" class="icon">
+
+                            <h3>Learn</h3>
+                            <br>
+                            <p>Stay updated with the latest environmental news and explore comprehensive educational
+                                content about climate issues.</p>
+                            <br>
+                            <a href="/news" target="_self" class="exploreHyper">Explore Learning →</a>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div class="container">
+
+                            <img src="../src/act.png" alt="Action Image" class="icon">
+
+                            <h3>Take Action</h3>
+                            <br>
+                            <p>Get practical tips and actionable steps you can take to make a positive environmental
+                                impact.</p>
+                            <br>
+                            <br>
+                            <a href="/action" target="_self" class="exploreHyper">Start Now →</a>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div class="container">
+
+                            <img src="../src/bot.png" alt="Bot Image" class="icon">
+
+                            <h3>AI Assistant</h3>
+                            <br>
+                            <p>Chat with our intelligent assistant to get instant answers to your environmental
+                                questions.</p>
+                            <br>
+                            <br>
+                            <a href="ai/ai.html" target="_self" class="exploreHyper">Explore Learning →</a>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div class="container">
+
+                            <img src="../src/community.png" alt="Team Image" class="icon">
+
+                            <h3>About Us</h3>
+                            <br>
+                            <p>Learn about our team, mission, and the developers behind Project E.A.R.T.H.</p>
+                            <br>
+                            <br>
+                            <br>
+                            <a href="about/about.html" target="_self" class="exploreHyper">Explore Learning →</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionBreak">
+            <p>"Environment is no one’s property to destroy; it’s everyone’s responsibility to protect." – Mohith Agadi
+            </p>
+        </div>
+
+        <div class="newsContentParent">
+            <div class="newsContent">
+
+                <iframe src="../public/ai/ai.html" title="AI Assistant" class="newsFrame"></iframe>
+
+                <div class="newsIntroText">
+                    <h1>Stay Updated with Latest Environment-Related News</h1>
+                    <br>
+                    <br>
+                    <p>Say hello to E.A.R.T.H., your personal AI! Whether you're curious about climate change, your
+                        carbon footprint, or renewable energy, E.A.R.T.H. is here 24/7 ready to guide you towards a
+                        greener future</p>
+                    <br>
+                    <p><b>Key Features</b></p>
+                    <br>
+                    <p class="newsList">Up-to-Date Environmental News - Stay informed with real-time stories and reports
+                        about our planet.</p>
+                    <br>
+                    <p class="newsList">Climate and Sustainability Insights - Get expert-backed explanations of global
+                        environmental issues.</p>
+                    <br>
+                    <p class="newsList">Personalized Action Tips - Discover practical steps you can take to live more
+                        sustainably.</p>
+                    <br>
+                    <p class="newsList">24/7 AI Assistance - Ask anything, anytime—E.A.R.T.H. is always ready to share
+                        the latest and most reliable information.</p>
+
+                    <div class="newsButtonSection">
+
+                        <a href="/news" target="_self" class="newsButton"><b>Learn New Things About Environment</b></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sectionBreak">
+            <p>"We don’t have to sacrifice a strong economy for a healthy environment." – Dennis Weaver</p>
+        </div>
+
+        <div class="actionContentParent">
+            <div class="actionContent">
+                <center>
+                    <h1>Quick Environmental Actions</h1>
+                    <br>
+                    <p>Simple steps you can take today to make a difference</p>
+                </center>
+            </div>
+
+            <br>
+
+            <div class="actionCardContainer">
+
+                <div class="actionCard">
+                    <div class="container">
+                        <center>
+                            <img src="../src/recycling.png" alt="Recycling" class="actionIcon">
+
+                            <h3>Start Recycling</h3>
+                            <p>Learn proper recycling techniques</p>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="actionCard">
+                    <div class="container">
+                        <center>
+                            <img src="../src/green-energy.png" alt="Green Energy" class="actionIcon">
+
+                            <h3>Save Energy</h3>
+                            <p>Reduce your energy consumption</p>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="actionCard">
+                    <div class="container">
+                        <center>
+                            <img src="../src/electric-car.png" alt="Green Transport" class="actionIcon">
+
+                            <h3>Green Transport</h3>
+                            <p>Choose eco-friendly transportation</p>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="actionCard">
+                    <div class="container">
+                        <center>
+                            <img src="../src/plant.png" alt="Plant" class="actionIcon">
+
+                            <h3>Plant Trees</h3>
+                            <p>Join local reforestation efforts</p>
+                        </center>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="sectionBreak">
+            <p>"A nation that destroys its soils destroys itself. Forests are the lungs of our land, purifying the air
+                and giving fresh strength to our people." ― Franklin D. Roosevel</p>
+        </div>
+
+        <div class="aiContentParent">
+            <div class="aiContent">
+                <div class="aiIntroText">
+                    <h1>Meet Your Environmental AI Assistant</h1>
+                    <br>
+                    <br>
+                    <p>Get instant, accurate answers to your environment-related questions with our advanced AI chatbot.
+                        From climate science to practical tips, we're here to help.</p>
+                    <br>
+                    <p><b>Here's what our AI Assistant can do for you:</b></p>
+                    <br>
+                    <p class="aiList"> 24/7 availability for environment-related questions</p>
+                    <br>
+                    <p class="aiList"> Science-based information and sources</p>
+                    <br>
+                    <p class="aiList"> Personalized action recommendations</p>
+
+                    <div class="aiButtonSection">
+
+                        <a href="ai/ai.html" target="_self" class="aiButton"><b>Chat with AI Assistant</b></a>
+
+                    </div>
+
+                </div>
+
+                <iframe src="./ai/ai.html" title="AI Assistant" class="aiFrame"></iframe>
+
+            </div>
+        </div>
+
+        <div class="sectionBreak">
+            <p>"What is the use of a house if you haven’t got a tolerable planet to put it on?" ― Henry David Thoreau
+            </p>
+        </div>
+
+        <div class="footerContentParent">
+            <div class="footerContent">
+                <div class="firstSection">
+                    <h2 id="footerTitle">
+                        <i class="fa-solid fa-earth-asia earthIcon"></i>
+                        E.A.R.T.H.
+                    </h2>
+                    <br>
+                    <p class="footerText"><span class="spanText">E</span>nvironmental <span
+                            class="spanText">A</span>wareness &
+                    </p>
+                    <p class="footerText"><span class="spanText">R</span>esponsibility <span
+                            class="spanText">T</span>ogether <span class="spanText">H</span>ub - </p>
+                    <p class="footerText">Making environmental education</p>
+                    <p class="footerText">accessible to everyone</p>
+                </div>
+
+                <div class="secondSection">
+                    <p><span class="spanText">Navigation:</span></p>
+                    <br>
+                    <a href="/" target="_self">
+                        <p class="footerText">Home</p>
+                    </a>
+                    <a href="/learn" target="_self">
+                        <p class="footerText">Learn</p>
+                    </a>
+                    <a href="/take-action" target="_self">
+                        <p class="footerText">Take Action</p>
+                    </a>
+                    <a href="/ai-assistant" target="_self">
+                        <p class="footerText">AI Assistant</p>
+                    </a>
+                    <a href="/about" target="_self">
+                        <p class="footerText">About & Developer</p>
+                    </a>
+                </div>
+
+                <div class="thirdSection">
+                    <p><span class="spanText">Developers:</span></p>
+                    <br>
+                    <p class="footerText">Boboyo, Cyrus P.</p>
+                    <p class="footerText">Dollente, Carl Justine J.</p>
+                    <p class="footerText">Ramos, Heiden C.</p>
+                    <p class="footerText">Sanchez, Zakari Daniel B.</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <hr>
+
+            <br>
+            <br>
+            <br>
+            <center>
+                <p id="allRightsReserved">@ 2025 Project E.A.R.T.H. All rights reserved. Built for a sustainable future.
+                </p>
+            </center>
+        </div>
+
+    </div>
+</body>
+
+</html>
