@@ -1,0 +1,18 @@
+NOTE: if you want to test and run this project, just simply click this link provided below:
+
+  WEBSITE_URL: https://earth-production-10af.up.railway.app/
+
+IMPORTANT:
+ You can't run this on your local machine, it can only be tested online using the provided link above.
+
+IMPORTANTS INSIDE THIS PROJECT:
+  folders: 
+	public folder: pages/tabs files, including css and js.
+	src folder: pictures and graphics type files.
+	node_modules: programming libraries used for development, dependencies and application.
+  files: 
+	server.js: backend service and middlware provider.
+	index.html: main/home tab.
+	package.json: scripts and dependency config.
+
+
