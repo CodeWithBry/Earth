@@ -29,7 +29,7 @@ async function getUserLoggedIn() {
         })
 
         const getData = await response.json();
-        localStorage.setItem("user", JSON.stringify(getData.result))
+        localStorage.setItem("user", JSON.stringify(getData.user))
         console.log(getData.result)
         if (getData?.message) {
             alert(getData.message)
