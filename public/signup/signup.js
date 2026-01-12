@@ -48,7 +48,7 @@ async function createUser() {
 
     if (password == confirmPassword) {
         try {
-            const response = await fetch("https://earth-production-9ee1.up.railway.app/api/create-user", {
+            const response = await fetch("https://earth-production-10af.up.railway.app/api/create-user", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -60,7 +60,7 @@ async function createUser() {
 
             if (getMessage?.message) {
                 alert(getMessage.message)
-                window.location.href = "https://earth-production-9ee1.up.railway.app/login";
+                window.location.href = "https://earth-production-10af.up.railway.app/login";
             }
         } catch (error) {
             console.log(error)
