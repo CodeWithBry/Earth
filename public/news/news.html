@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project E.A.R.T.H - EnviroNews</title>
+    <link rel="stylesheet" href="../news/news.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="module" src="../../script.js"></script>
+</head>
+
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="mainHeaderParent">
+        <center>
+            <div class="mainHeader">
+                <h2 id="title">
+                    <i class="fa-solid fa-earth-asia earthIcon"></i>
+                    E.A.R.T.H.
+                </h2>
+
+
+                <ul id="navList">
+                    <li class="navItem"><a href="/" target="_self">Home</a></li>
+                    <li class="navItem"><a href="/learn" target="_self">Learn</a></li>
+                    <li class="navItem"><a href="/take-action" target="_self">Take Action</a></li>
+                    <li class="navItem"><a href="/ai-assistant" target="_self">AI Assistant</a></li>
+                    <li class="navItem"><a href="/about" target="_self">About & Developer</a></li>
+                    <li class="navItem" id="signup"><a href="/signup" target="_self">Sign Up</a></li>
+                    <li class="navItem" id="login"><a href="/login" target="_self">Log In</a></li>
+                    <li class="navItem" id="logout"><a href="/login" target="_self">Log out</a></li>
+                </ul>
+            </div>
+        </center>
+    </div>
+
+
+    <div class="chatBox">
+        <!-- Header -->
+        <header class="chatHeader">
+            <h1>Environmental News Assistant</h1>
+            <!-- Leaf Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17.5 7.3 19 10c1.5 2.7 3.2 6.5 2 10a1 1 0 0 1-1 1c-3-2-6-3-9-3z" />
+                <path d="M12 15h.01" />
+                <path d="M17 17h.01" />
+                <path d="M16 11h.01" />
+                <path d="M14 6h.01" />
+            </svg>
+        </header>
+
+
+        <!-- Chat Messages Area -->
+        <div class="chatMessages">
+            <!-- Welcome Message -->
+            <div class="message">
+                <div class="avatar botAvatar">AI</div>
+                <div class="messageBox">
+                    <div class="messageText">
+                        <p><b>AI Assistant</b></p>
+                        <p>Welcome! Select an option below to get the latest environmental news.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="buttonRow">
+            <button id="generalBtn" class="actionButton primaryButton">
+                General News
+            </button>
+            <button id="localBtn" class="actionButton secondaryButton">
+                Philippines News
+            </button>
+            <button id="internationalBtn" class="actionButton secondaryButton">
+                International News
+            </button>
+        </div>
+    </div>
+
+
+    <div class="sectionBreak">
+        <p>"To waste, to destroy our natural resources, to skin and exhaust the land instead of using it so as to
+            increase its usefulness, will result in undermining in the days of our children the very prosperity which we
+            ought by right to hand down to them amplified and developed." ― Theodore Roosevelt </p>
+    </div>
+
+
+    <div class="footerContentParent">
+        <div class="footerContent">
+            <div class="firstSection">
+                <h2 id="footerTitle">
+                    <i class="fa-solid fa-earth-asia earthIcon"></i>
+                    E.A.R.T.H.
+                </h2>
+                <br>
+                <p class="footerText"><span class="spanText">E</span>nvironmental <span
+                        class="spanText">A</span>wareness &
+                </p>
+                <p class="footerText"><span class="spanText">R</span>esponsibility <span
+                        class="spanText">T</span>ogether <span class="spanText">H</span>ub - </p>
+                <p class="footerText">Making environmental education</p>
+                <p class="footerText">accessible to everyone</p>
+            </div>
+
+
+            <div class="secondSection">
+                    <p><span class="spanText">Navigation:</span></p>
+                    <br>
+                    <a href="/" target="_self">
+                        <p class="footerText">Home</p>
+                    </a>
+                    <a href="/learn" target="_self">
+                        <p class="footerText">Learn</p>
+                    </a>
+                    <a href="/take-action" target="_self">
+                        <p class="footerText">Take Action</p>
+                    </a>
+                    <a href="/ai-assistant" target="_self">
+                        <p class="footerText">AI Assistant</p>
+                    </a>
+                    <a href="/about" target="_self">
+                        <p class="footerText">About & Developer</p>
+                    </a>
+                </div>
+
+
+            <div class="thirdSection">
+                <p><span class="spanText">Developers:</span></p>
+                <br>
+                <p class="footerText">Boboyo, Cyrus P.</p>
+                <p class="footerText">Dollente, Carl Justine J.</p>
+                <p class="footerText">Ramos, Heiden C.</p>
+                <p class="footerText">Sanchez, Zakari Daniel B.</p>
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+
+
+        <hr>
+
+
+        <br>
+        <br>
+        <br>
+        <center>
+            <p id="allRightsReserved">@ 2025 Project E.A.R.T.H. All rights reserved. Built for a sustainable future.
+            </p>
+        </center>
+    </div>
+
+
+
+
+    <script>
+        const apiUrl = 'http://localhost:3001/api/news';
+        const chatMessages = document.querySelector('.chatMessages');
+
+
+        console.log('🚀 Script loaded successfully');
+        console.log('📍 API URL:', apiUrl);
+
+
+        // Show message in chat
+        function showMessage(text, isUser = false) {
+            const div = document.createElement('div');
+            div.className = `message ${isUser ? 'userMessage' : ''}`;
+            div.innerHTML = `
+                <div class="avatar ${isUser ? 'userAvatar' : 'botAvatar'}">${isUser ? 'U' : 'AI'}</div>
+                <div class="messageBox">
+                    <div class="messageText">
+                        ${text}
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            console.log('💬 Message added:', text.substring(0, 50));
+        }
+
+
+        // Show loading animation
+        function showLoading() {
+            const div = document.createElement('div');
+            div.id = 'loadingBox';
+            div.className = 'message';
+            div.innerHTML = `
+                <div class="avatar botAvatar">AI</div>
+                <div class="messageBox">
+                    <div class="messageText">
+                        <div class="loadingDots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p>Searching for news...</p>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            console.log('⏳ Loading animation shown');
+        }
+
+
+        // Remove loading animation
+        function hideLoading() {
+            const loadingBox = document.getElementById('loadingBox');
+            if (loadingBox) {
+                loadingBox.remove();
+                console.log('✅ Loading animation removed');
+            }
+        }
+
+
+        // Show results in chat
+        function showResults(results) {
+            console.log('📰 Showing results:', results);
+
+            if (!results || results.length === 0) {
+                showError("No news articles found. Please try again.");
+                return;
+            }
+
+
+            const div = document.createElement('div');
+            div.className = 'resultsBox';
+
+
+            const items = results.map(item => `
+                <div class="resultItem">
+                    <h3 class="resultTitle">${item.header}</h3>
+                    <p class="resultSummary">${item.ai_summary}</p>
+                    <a href="${item.link}" target="_blank" class="resultLink">${item.link}</a>
+                </div>
+            `).join('');
+
+
+            div.innerHTML = `
+                <h2 style="margin-bottom: 15px; color: #56d384;">Latest Articles (${results.length}):</h2>
+                ${items}
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            console.log('✅ Results displayed successfully');
+        }
+
+
+        // Show error message
+        function showError(message) {
+            console.error('❌ Error:', message);
+            const div = document.createElement('div');
+            div.className = 'message';
+            div.innerHTML = `
+                <div class="avatar botAvatar">!</div>
+                <div class="messageBox" style="background: #fee2e2; color: #dc2626;">
+                    <div class="messageText">
+                        <p><b>Error</b></p>
+                        <p>${message}</p>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+
+        // Get news from server
+        async function getNews(category) {
+            console.log('🔍 getNews called with category:', category);
+
+            try {
+                showMessage(`Searching for ${category} news...`, true);
+                showLoading();
+
+
+                let query, systemPrompt;
+                const today = new Date().toISOString().split('T')[0];
+
+                switch (category) {
+                    case 'general':
+                        query = `climate change environment sustainability biodiversity ${today}`;
+                        systemPrompt = "Find diverse recent environmental news from major international outlets like BBC, Reuters, The Guardian, CNN, AP News. Cover different topics: climate, wildlife, pollution, renewable energy, conservation.";
+                        break;
+                    case 'local':
+                        query = `Philippines environment climate deforestation Manila pollution ${today}`;
+                        systemPrompt = "Find recent environmental news specific to the Philippines from Filipino and international sources covering Philippine environmental issues. Include topics like typhoons, deforestation, marine conservation, air quality in Manila.";
+                        break;
+                    case 'international':
+                        query = `global warming UN climate summit Paris agreement renewable energy ${today}`;
+                        systemPrompt = "Find major international environmental news from leading sources like UN News, Reuters, Bloomberg, covering global climate policies, international summits, cross-border environmental issues.";
+                        break;
+                }
+
+
+                console.log('📤 Sending request with query:', query);
+
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userQuery: query,
+                        systemPrompt: systemPrompt
+                    })
+                });
+
+
+                console.log('📥 Response status:', response.status);
+
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+
+                const data = await response.json();
+                console.log('📦 Data received:', data);
+
+                let results;
+                try {
+                    results = typeof data === 'string' ? JSON.parse(data) : data;
+                    if (!Array.isArray(results)) {
+                        results = results.articles || [];
+                    }
+                } catch (e) {
+                    console.error('❌ Error parsing response:', e);
+                    results = [];
+                }
+
+
+                hideLoading();
+                showResults(results);
+
+
+            } catch (error) {
+                console.error('❌ Error in getNews:', error);
+                hideLoading();
+                showError('Failed to fetch news. Please check your connection and try again. Error: ' + error.message);
+            }
+        }
+
+
+        // Button event listeners with console logs
+        const generalBtn = document.getElementById('generalBtn');
+        const localBtn = document.getElementById('localBtn');
+        const internationalBtn = document.getElementById('internationalBtn');
+
+
+        console.log('🔘 Buttons found:', {
+            general: !!generalBtn,
+            local: !!localBtn,
+            international: !!internationalBtn
+        });
+
+
+        if (generalBtn) {
+            generalBtn.addEventListener('click', () => {
+                console.log('🖱️ General button clicked');
+                getNews('general');
+            });
+        }
+
+
+        if (localBtn) {
+            localBtn.addEventListener('click', () => {
+                console.log('🖱️ Local button clicked');
+                getNews('local');
+            });
+        }
+
+
+        if (internationalBtn) {
+            internationalBtn.addEventListener('click', () => {
+                console.log('🖱️ International button clicked');
+                getNews('international');
+            });
+        }
+
+
+        console.log('✅ All event listeners attached');
+    </script>
+    <script type="module" src="../script.js"></script>
+</body>
+
+
+</html>

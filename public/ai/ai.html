@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project E.A.R.T.H. - AI Assistant</title>
+  <link rel="stylesheet" href="../ai/ai.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script type="module" src="../../script.js"></script>
+</head>
+
+<body>
+  <!-- Header (Navigation) Section -->
+  <div class="container">
+    <center>
+      <div class="mainHeader">
+        <h2 id="title">
+          <i class="fa-solid fa-earth-asia earthIcon"></i>
+          E.A.R.T.H.
+        </h2>
+
+        <ul id="navList">
+          <li class="navItem"><a href="/" target="_self">Home</a></li>
+          <li class="navItem"><a href="/learn" target="_self">Learn</a></li>
+          <li class="navItem"><a href="/take-action" target="_self">Take Action</a></li>
+          <li class="navItem"><a href="/ai-assistant" target="_self">AI Assistant</a></li>
+          <li class="navItem"><a href="/about" target="_self">About & Developer</a></li>
+          <li class="navItem" id="signup"><a href="/signup" target="_self">Sign Up</a></li>
+          <li class="navItem" id="login"><a href="/login" target="_self">Log In</a></li>
+          <li class="navItem" id="logout"><a href="/login" target="_self">Log out</a></li>
+        </ul>
+      </div>
+    </center>
+  </div>
+
+  <div class="chatContainer">
+    <div class="chatHeader">
+      <div class="aiAvatar">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <div class="headerText">
+        <h2>E.A.R.T.H. AI Assistant</h2>
+        <p class="subtitle">Powered by Meta Llama 4 Maverick • Ask me anything about the environment</p>
+      </div>
+    </div>
+
+    <div id="chatMessages">
+      <div class="welcomeMessage">
+        <i class="fa-solid fa-leaf welcomeIcon"></i>
+        <h3>Welcome to Project E.A.R.T.H. AI! 🌍</h3>
+        <p>I'm here to help you learn about environmental topics, sustainability, climate change, and how you can make a
+          difference. Ask me anything!</p>
+        <div class="suggestionChips">
+          <button class="chip" onclick="askSuggestion('What is climate change?')">
+            <i class="fa-solid fa-temperature-arrow-up"></i> Climate Change
+          </button>
+          <button class="chip" onclick="askSuggestion('How can I reduce my carbon footprint?')">
+            <i class="fa-solid fa-recycle"></i> Carbon Footprint
+          </button>
+          <button class="chip" onclick="askSuggestion('What are renewable energy sources?')">
+            <i class="fa-solid fa-solar-panel"></i> Renewable Energy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="inputContainer">
+      <div class="inputWrapper">
+        <input type="text" id="userInput" placeholder="Ask about climate, sustainability, conservation..."
+          onkeypress="if(event.key==='Enter') sendMessage()" />
+        <button class="sendButton" onclick="sendMessage()">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sectionBreak">
+    <p>"What we are doing to the forests of the world is but a mirror reflection of what we are doing to ourselves and
+      to one another." ― Chris Maser</p>
+  </div>
+
+  <div class="footerContentParent">
+    <div class="footerContent">
+      <div class="firstSection">
+        <h2 id="footerTitle">
+          <i class="fa-solid fa-earth-asia earthIcon"></i>
+          E.A.R.T.H.
+        </h2>
+        <br>
+        <p class="footerText"><span class="spanText">E</span>nvironmental <span class="spanText">A</span>wareness &
+        </p>
+        <p class="footerText"><span class="spanText">R</span>esponsibility <span class="spanText">T</span>ogether <span
+            class="spanText">H</span>ub - </p>
+        <p class="footerText">Making environmental education</p>
+        <p class="footerText">accessible to everyone</p>
+      </div>
+
+      <div class="secondSection">
+                    <p><span class="spanText">Navigation:</span></p>
+                    <br>
+                    <a href="/" target="_self">
+                        <p class="footerText">Home</p>
+                    </a>
+                    <a href="/learn" target="_self">
+                        <p class="footerText">Learn</p>
+                    </a>
+                    <a href="/take-action" target="_self">
+                        <p class="footerText">Take Action</p>
+                    </a>
+                    <a href="/ai-assistant" target="_self">
+                        <p class="footerText">AI Assistant</p>
+                    </a>
+                    <a href="/about" target="_self">
+                        <p class="footerText">About & Developer</p>
+                    </a>
+                </div>
+
+      <div class="thirdSection">
+        <p><span class="spanText">Developers:</span></p>
+        <br>
+        <p class="footerText">Boboyo, Cyrus P.</p>
+        <p class="footerText">Dollente, Carl Justine J.</p>
+        <p class="footerText">Ramos, Heiden C.</p>
+        <p class="footerText">Sanchez, Zakari Daniel B.</p>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <hr>
+
+    <br>
+    <br>
+    <br>
+    <center>
+      <p id="allRightsReserved">@ 2025 Project E.A.R.T.H. All rights reserved. Built for a sustainable future.
+      </p>
+    </center>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function askSuggestion(question) {
+      document.getElementById('userInput').value = question;
+      sendMessage();
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('userInput').value.trim();
+      const chatMessages = document.getElementById('chatMessages');
+
+      if (!input) {
+        return;
+      }
+
+      const welcomeMsg = document.querySelector('.welcomeMessage');
+      if (welcomeMsg) {
+        welcomeMsg.remove();
+      }
+
+      const userMsg = document.createElement('div');
+      userMsg.className = 'message userMessage';
+      userMsg.innerHTML = `
+          <div class="messageContent">
+            <div class="messageText">${input}</div>
+          </div>
+          <div class="messageAvatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        `;
+      chatMessages.appendChild(userMsg);
+
+      const loadingMsg = document.createElement('div');
+      loadingMsg.className = 'message aiMessage';
+      loadingMsg.id = 'loadingMessage';
+      loadingMsg.innerHTML = `
+          <div class="messageAvatar aiAvatarSmall">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="messageContent">
+            <div class="messageText">
+              <div class="typingIndicator">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        `;
+      chatMessages.appendChild(loadingMsg);
+
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      document.getElementById('userInput').value = '';
+
+      try {
+        const response = await fetch('http://localhost:3000/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: input }),
+        });
+
+        const data = await response.json();
+
+        loadingMsg.remove();
+
+        if (data.error) {
+          const errorMsg = document.createElement('div');
+          errorMsg.className = 'message aiMessage errorMessage';
+          errorMsg.innerHTML = `
+              <div class="messageAvatar aiAvatarSmall">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div class="messageContent">
+                <div class="messageText">
+                  <strong>⚠️ ${data.error.code === 429 ? 'Rate Limit' : 'Error'}</strong><br>
+                  ${data.error.message || 'Something went wrong. Please try again.'}
+                </div>
+              </div>
+            `;
+          chatMessages.appendChild(errorMsg);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+          return;
+        }
+
+        let markdownText = '';
+
+        if (data.choices && data.choices.length > 0 && data.choices[0].message) {
+          markdownText = data.choices[0].message.content;
+        } else if (data.message) {
+          markdownText = data.message;
+        } else if (data.content) {
+          markdownText = data.content;
+        }
+
+        if (!markdownText || markdownText.trim() === '') {
+          throw new Error('No response received from AI');
+        }
+
+        const aiMsg = document.createElement('div');
+        aiMsg.className = 'message aiMessage';
+        aiMsg.innerHTML = `
+            <div class="messageAvatar aiAvatarSmall">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="messageContent">
+              <div class="messageText">${marked.parse(markdownText)}</div>
+            </div>
+          `;
+        chatMessages.appendChild(aiMsg);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      } catch (error) {
+        console.error('Error details:', error);
+
+        const loading = document.getElementById('loadingMessage');
+        if (loading) loading.remove();
+
+        const errorMsg = document.createElement('div');
+        errorMsg.className = 'message aiMessage errorMessage';
+        errorMsg.innerHTML = `
+            <div class="messageAvatar aiAvatarSmall">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="messageContent">
+              <div class="messageText">
+                <strong>Connection Error</strong><br>
+                ${error.message}<br>
+                <small>Make sure the server is running on http://localhost:3000</small>
+              </div>
+            </div>
+          `;
+        chatMessages.appendChild(errorMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+  </script>
+</body>
+
+</html>

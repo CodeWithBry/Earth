@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../signup/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">    
+    <title>E.A.R.T.H..</title>
+</head>
+
+<body>
+    <div class="sign-up">
+        <div class="left">
+            <div class="web-title">
+                <h1>
+                    <a href="/" id="title">
+                        <i class="	fas fa-arrow-left"></i>
+                        Back
+                    </a>
+                </h1>
+            </div>
+
+            <div class="form">
+                <div class="top">
+                    <h1 id="top-headline">
+                        Welcome to <span>E.A.R.T.H.</span>
+                    </h1>
+                    <p>Log-in now to the Environmental Awareness & Responsibility Together Hub.</p>
+                </div>
+
+                <div class="inputs">
+                    <label for="username-input" class="input-container">
+                        <input type="text" class="inputs" id="username-input">
+                        <label class="label-text " for="username-input">Email</label>
+                    </label>
+                    <span class="error"></span>
+                    <label for="password-input" class="input-container">
+                        <input type="password" class="inputs" id="password-input">
+                        <label class="label-text " for="password-input">Password</label>
+                        <button class="changeVisibility">
+                            <i class="far fa-eye-slash"></i>
+                        </button>
+                    </label>
+                    <span class="error"></span>
+                    <label for="confirm-password-input" class="input-container">
+                        <input type="password" class="inputs" id="confirm-password-input">
+                        <label class="label-text " for="confirm-password-input">Confirm Password</label>
+                        <button class="changeVisibility">
+                            <i class="far fa-eye-slash"></i>
+                        </button>
+                    </label>
+                    <span class="error"></span>
+
+                    <button id="submit-btn">Log in</button>
+
+                    <p>Already have an account? <a href="/login">Log In</a></p>
+                </div>
+            </div>
+
+            <p id="terms-of-use">
+                Our services are provided for lawful and personal use only, and you must not misuse or interfere with
+                them. By accessing your account, you accept our policies and consent to the collection and use of
+                information as described in our Privacy Policy.
+            </p>
+        </div>
+        <div class="right">
+            <img src="../../src/Planet_Earth.jpeg" alt="login">
+        </div>
+    </div>
+
+    <script type="module" src="../signup/signup.js"></script>
+</body>
+
+</html>
