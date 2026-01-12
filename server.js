@@ -121,14 +121,11 @@ app.post("/api/chat", async (req, res) => {
 
   if (!message) return res.status(400).json({ error: "Message is required" });
 
-  const OPENROUTER_KEY = process.env.OPENROUTER_KEY;
-  if (!OPENROUTER_KEY) return res.status(500).json({ error: "OpenRouter API key not set" });
-
   try {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${OPENROUTER_KEY}`,
+        "Authorization": `Bearer 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`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
