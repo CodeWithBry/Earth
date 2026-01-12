@@ -9,7 +9,8 @@
         "dev": "nodemon server.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "preview": "vite preview",
-        "predeploy": "npm run build"
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     },
     "keywords": [
         "gemini",

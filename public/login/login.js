@@ -22,7 +22,7 @@ async function getUserLoggedIn() {
 
     try {
         console.log("getResponse!...")
-        const response = await fetch("http://localhost:3000/api/get-logged-in", {
+        const response = await fetch("https://earth-production-9ee1.up.railway.app/api/get-logged-in", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
@@ -33,7 +33,7 @@ async function getUserLoggedIn() {
         console.log(getData.result)
         if (getData?.message) {
             alert(getData.message)
-            window.location.href = "http://localhost:3000/";
+            window.location.href = "https://earth-production-9ee1.up.railway.app/";
         }
     } catch (error) {
         alert(error)
